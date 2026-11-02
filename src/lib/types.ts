@@ -112,6 +112,8 @@ export type Finding = {
   title: string;
   detail?: string;
   quote?: string;
+  /** For measurement findings that compare with the profile: values in inches, or US sizes. */
+  compare?: { listed: number; usual: number; isSize: boolean; label: string };
 };
 
 export type FitCheck = {

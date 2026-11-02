@@ -183,7 +183,7 @@ function fmtValue(name: MeasurementName, inches: number, units: "in" | "cm") {
 
 function fmtDiff(name: MeasurementName, diff: number, units: "in" | "cm") {
   const d = Math.abs(diff);
-  if (name === "shoe_size_us") return `${d} size${d === 1 ? "" : "s"}`;
+  if (name === "shoe_size_us") return d === 0.5 ? "half a size" : `${d} size${d === 1 ? "" : "s"}`;
   return fmtLength(d, units);
 }
 
@@ -269,6 +269,7 @@ export function runFitCheck(facts: ListingFacts, listingText: string, profile: F
       title,
       detail: detailParts.join(" ") || undefined,
       quote: n.source.quote,
+      compare: { listed: n.inches, usual, isSize: name === "shoe_size_us", label: MEASUREMENT_LABEL[name] },
     });
   }
 
@@ -386,12 +387,13 @@ function buildSellerMessage(facts: ListingFacts, missing: MeasurementName[], cat
     const names = missing.map((m) => MEASUREMENT_LABEL[m].toLowerCase().replace(" (us)", ""));
     asks.push(`could you measure the ${joinList(names)} with it laid flat, in ${units}?`);
   }
-  if (facts.flaws.length) asks.push("could you add a close-up photo of the flaw you mention?");
+  if (facts.flaws.length) asks.push(`could you add a close-up photo of the ${facts.flaws.length === 1 ? "flaw" : "flaws"} you mention?`);
   if (facts.final_sale === null) asks.push("do you accept returns if it doesn't fit?");
   if (!asks.length) return null;
   const first = asks[0];
   const rest = asks.slice(1).map((a) => a[0].toUpperCase() + a.slice(1));
-  return [`Hi! I'm interested in your ${facts.title.toLowerCase()}. Before I buy, ${first}`, ...rest, "Thank you!"].join(" ");
+  const item = /^[A-Z][a-z]/.test(facts.title) ? facts.title[0].toLowerCase() + facts.title.slice(1) : facts.title;
+  return [`Hi! I'm interested in your ${item}. Before I buy, ${first}`, ...rest, "Thank you!"].join(" ");
 }
 
 function joinList(items: string[]) {

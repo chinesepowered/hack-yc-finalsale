@@ -1,3 +1,5 @@
+import { FinalSaleApp } from "@/components/FinalSaleApp";
+
 export default function Home() {
-  return <main id="main">Final Sale</main>;
+  return <FinalSaleApp />;
 }

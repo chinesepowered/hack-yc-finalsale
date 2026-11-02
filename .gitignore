@@ -30,3 +30,6 @@ CLAUDE.md
 coverage/
 test-results/
 playwright-report/
+
+# video build scratch
+demo/.tmp/

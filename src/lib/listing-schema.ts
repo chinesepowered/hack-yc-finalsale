@@ -106,6 +106,7 @@ export const listingFactsJsonSchema = {
 
 export const LISTING_READER_PROMPT = `You read secondhand clothing listings for a shopper who cannot return the item.
 Extract only what the listing text states. Never guess or invent numbers.
+- title: the short item name without size, condition or seller notes, e.g. "90s washed denim jacket".
 
 Rules:
 - measurements: one entry per measurement the seller gives. Use the unit the seller used ("in" or "cm"; "size" for shoe sizes).
