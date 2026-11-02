@@ -1,7 +1,32 @@
+# secrets
 .env
 .env.*
 !.env.example
+
+# dependencies
 node_modules/
+.pnp
+.pnp.*
+
+# next.js
 .next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
 .vercel/
+
+# agent files that next dev writes on its own
+AGENTS.md
+CLAUDE.md
+
+# runtime caches (live mode)
+.cache/
+
+# misc
+.DS_Store
+*.pem
 *.log
+coverage/
+test-results/
+playwright-report/
