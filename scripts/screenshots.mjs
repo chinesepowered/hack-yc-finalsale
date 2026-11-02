@@ -26,9 +26,8 @@ await page.screenshot({ path: `${out}/01-try-on-and-final-sale-check.png` });
 
 await tid("closet-white-sneakers").click();
 await settle(1200);
-await tid("closet-card").scrollIntoViewIfNeeded();
-await page.evaluate(() => window.scrollTo(0, 0));
-await settle(300);
+await page.evaluate(() => document.querySelector('[data-testid="closet-card"]').scrollIntoView({ block: "end" }));
+await settle(500);
 await page.screenshot({ path: `${out}/02-style-with-your-closet.png` });
 
 await tid("save-look").click();
@@ -39,10 +38,14 @@ await page.screenshot({ path: `${out}/03-youcam-api-calls.png` });
 await tid("trace-dialog-close").click();
 
 await tid("closet-none").click();
+await page.evaluate(() => window.scrollTo(0, 0));
 await tid("listing-knit-cardigan").click();
 await settle(1200);
+await page.evaluate(() => document.querySelector('[data-testid="ask-seller"]').scrollIntoView({ block: "end" }));
+await settle(500);
 await page.screenshot({ path: `${out}/04-missing-measurement-ask-the-seller.png` });
 
+await page.evaluate(() => window.scrollTo(0, 0));
 await tid("listing-combat-boots").click();
 await settle(1000);
 await tid("save-look").click();

@@ -235,7 +235,6 @@ export function runFitCheck(facts: ListingFacts, listingText: string, profile: F
   }
 
   // 2. Compare with the shopper's usual measurements.
-  let compared = 0;
   const stretch = facts.has_stretch === true;
   for (const [name, n] of byName) {
     const usual = profileValue(profile, category, name);
@@ -252,7 +251,6 @@ export function runFitCheck(facts: ListingFacts, listingText: string, profile: F
       });
       continue;
     }
-    compared++;
     const diff = n.inches - usual;
     let [okBelow, flagAt] = tol;
     if (stretch && diff < 0 && (name === "pit_to_pit" || name === "waist_flat" || name === "hip_flat")) {
@@ -285,6 +283,7 @@ export function runFitCheck(facts: ListingFacts, listingText: string, profile: F
   // 3. Key measurements the seller did not give.
   const key = KEY_MEASUREMENTS[category];
   const missing = key.filter((k) => !byName.has(k));
+  const comparedKey = key.filter((k) => byName.has(k) && profileValue(profile, category, k) !== undefined).length;
   for (const k of missing) {
     findings.push({
       id: `missing-${k}`,
@@ -377,7 +376,7 @@ export function runFitCheck(facts: ListingFacts, listingText: string, profile: F
     findings,
     flags,
     notes,
-    compared,
+    compared: comparedKey,
     keyTotal: key.length,
     missing: missing.map((m) => MEASUREMENT_LABEL[m].toLowerCase()),
     dropped,

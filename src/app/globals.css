@@ -281,3 +281,42 @@ dialog::backdrop {
 input[type="range"] {
   accent-color: var(--color-denim);
 }
+
+/* Workspace: one column on phones (photo, listing, try-on, check, closet), two on laptops, three on desktops. */
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+.workspace > * {
+  min-width: 0;
+}
+@media (min-width: 1024px) {
+  .workspace {
+    grid-template-columns: 300px minmax(0, 1fr);
+    grid-template-areas: "a b" "a c" "a d";
+    grid-template-rows: auto auto 1fr;
+  }
+  .ws-a {
+    grid-area: a;
+    align-self: start;
+  }
+  .ws-b {
+    grid-area: b;
+  }
+  .ws-c {
+    grid-area: c;
+    align-self: start;
+  }
+  .ws-d {
+    grid-area: d;
+    align-self: start;
+  }
+}
+@media (min-width: 1280px) {
+  .workspace {
+    grid-template-columns: 300px minmax(0, 1fr) minmax(400px, 470px);
+    grid-template-areas: "a b c" "a d c";
+    grid-template-rows: auto 1fr;
+  }
+}

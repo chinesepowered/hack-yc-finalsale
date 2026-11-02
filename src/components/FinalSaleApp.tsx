@@ -92,8 +92,8 @@ export function FinalSaleApp() {
           </p>
         </div>
       )}
-      <main id="main" className="mx-auto grid max-w-[1440px] gap-4 px-4 py-4 lg:grid-cols-[300px_minmax(0,1fr)] lg:px-6 xl:grid-cols-[300px_minmax(0,1fr)_minmax(400px,470px)]">
-        <div className="space-y-4">
+      <main id="main" className="workspace mx-auto max-w-[1440px] px-4 py-4 lg:px-6">
+        <div className="ws-a space-y-4">
           <ShopperCard app={app} shopper={shopper} profile={profile} onEdit={() => setDialog("profile")} />
           <ListingsCard
             listings={app.listings}
@@ -108,7 +108,7 @@ export function FinalSaleApp() {
           />
         </div>
 
-        <div className="min-w-0 space-y-4">
+        <div className="ws-b">
           <TryOnStage
             shopper={shopper}
             listing={listing}
@@ -126,6 +126,11 @@ export function FinalSaleApp() {
             onShowTrace={() => setDialog("trace")}
             revealKey={revealKey}
           />
+        </div>
+        <div className="ws-c">
+          <CheckPanel listing={listing} check={check} units={profile.displayUnits} onEditProfile={() => setDialog("profile")} />
+        </div>
+        <div className="ws-d">
           <ClosetCard
             app={app}
             listing={listing}
@@ -134,10 +139,6 @@ export function FinalSaleApp() {
             onSelect={setClosetId}
             canAdd={app.mode === "live"}
           />
-        </div>
-
-        <div className="min-w-0 lg:col-span-2 xl:col-span-1">
-          <CheckPanel listing={listing} check={check} units={profile.displayUnits} onEditProfile={() => setDialog("profile")} />
         </div>
       </main>
       <SiteFooter />

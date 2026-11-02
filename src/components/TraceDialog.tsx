@@ -24,7 +24,7 @@ export function TraceDialog({
         <div className="space-y-4">
           <p className="text-[15px] text-ink-2">
             {source === "recorded"
-              ? `Recorded ${result.recorded_at ? new Date(result.recorded_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) : ""} through this app's own /api/tryon route, then saved as a fixture.`
+              ? `Recorded ${result.recorded_at ? `${new Date(result.recorded_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short", timeZone: "America/Los_Angeles" })} PT` : ""} through this app's own /api/tryon route, then saved as a fixture.`
               : "Made live through this app's /api/tryon route."}{" "}
             Every YouCam task is asynchronous: register the file, upload the bytes, start the task, poll until it succeeds.
           </p>

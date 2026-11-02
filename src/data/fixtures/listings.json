@@ -191,33 +191,34 @@
       ],
       "flaws": [
         {
-          "text": "resoled once by a cobbler",
+          "text": "Well worn",
           "severity": "moderate",
-          "quote": "resoled once by a cobbler"
+          "quote": "Well worn but solid."
         },
         {
-          "text": "deep creasing across the toes",
-          "severity": "moderate",
-          "quote": "deep creasing across the toes"
+          "text": "Creasing across the toes",
+          "severity": "minor",
+          "quote": "Creasing across the toes"
         },
         {
-          "text": "scuffs on both toes",
-          "severity": "moderate",
-          "quote": "scuffs on both toes"
+          "text": "light scuffs on both toes",
+          "severity": "minor",
+          "quote": "light scuffs on both toes"
         }
       ],
       "fit_notes": [],
       "photo_notes": [
-        "Photographed from the front, so the back of the boots and the full sole tread are not visible.",
-        "The photo clearly shows the heavy creasing and scuffs on the toe area mentioned in the text."
+        "Photographed on a white background, showing the front and side profile of the boots.",
+        "The laces are untied and hanging down, partially obscuring the front of the boots.",
+        "The photo clearly shows the creasing on the leather and the scuffs on the toe area."
       ],
       "photo_garment_type": "boots"
     },
     "meta": {
       "model_label": "Open-weights LLM listing reader",
-      "ms": 5160,
+      "ms": 7571,
       "used_photo": true,
-      "recorded_at": "2026-11-02T03:22:04.819Z"
+      "recorded_at": "2026-11-02T03:28:53.763Z"
     }
   }
 }

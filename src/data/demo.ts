@@ -87,7 +87,7 @@ All sales final.`,
     sample: true,
     text: `Black leather lace-up combat boots, women's US 8.5
 Ten eyelets, chunky lug sole. Insole 9.75 in.
-Well worn: resoled once by a cobbler, deep creasing across the toes and scuffs on both toes.
+Well worn but solid. Resoled last year by a cobbler. Creasing across the toes and light scuffs on both toes.
 No returns, please ask questions before buying.`,
   },
 ];

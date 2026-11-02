@@ -59,12 +59,47 @@ export function CheckPanel({
         </div>
 
         <ul className="mt-4 space-y-2.5" data-testid="findings">
-          {check.findings.map((f) => (
-            <FindingRow key={f.id} f={f} units={units} />
-          ))}
+          {check.findings
+            .filter((f) => f.level !== "ok")
+            .map((f) => (
+              <FindingRow key={f.id} f={f} units={units} />
+            ))}
         </ul>
 
         {check.askSeller && <AskSeller text={check.askSeller} />}
+
+        {check.findings.some((f) => f.level === "ok" && f.kind !== "photo") && (
+          <div className="mt-4" data-testid="also-checked">
+            <p className="text-[12.5px] font-semibold uppercase tracking-wide text-ink-3">Also checked</p>
+            <ul className="mt-1.5 space-y-1.5">
+              {check.findings
+                .filter((f) => f.level === "ok" && f.kind !== "photo")
+                .map((f) => (
+                  <li key={f.id} className="flex items-start gap-2 text-[14px] leading-snug" data-testid={`finding-${f.id}`}>
+                    <CheckIcon size={16} className="mt-0.5 flex-none text-ok" />
+                    <span>
+                      {f.title}
+                      {f.detail && <span className="text-ink-3">. {f.detail}</span>}
+                      <span className="sr-only"> (OK)</span>
+                    </span>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        )}
+
+        {check.findings.some((f) => f.kind === "photo") && (
+          <div className="mt-4" data-testid="photo-notes">
+            <p className="text-[12.5px] font-semibold uppercase tracking-wide text-ink-3">About the listing photo</p>
+            <ul className="mt-1.5 list-disc space-y-1 pl-5 text-[13.5px] leading-snug text-ink-2">
+              {check.findings
+                .filter((f) => f.kind === "photo")
+                .map((f) => (
+                  <li key={f.id}>{f.title}</li>
+                ))}
+            </ul>
+          </div>
+        )}
 
         <div className="mt-5 space-y-1.5 border-t border-line pt-4 text-[13px] leading-relaxed text-ink-2">
           <p>
