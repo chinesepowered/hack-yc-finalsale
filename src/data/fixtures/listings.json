@@ -1,1 +1,223 @@
-{}
+{
+  "denim-jacket": {
+    "facts": {
+      "title": "90s washed denim jacket",
+      "garment_type": "jacket",
+      "size_label": "M",
+      "era": "1990s",
+      "fabric": "100% cotton denim",
+      "has_stretch": false,
+      "price": null,
+      "currency": null,
+      "final_sale": true,
+      "measurements": [
+        {
+          "name": "pit_to_pit",
+          "value": 20.5,
+          "unit": "in",
+          "quote": "pit to pit 20.5 in"
+        },
+        {
+          "name": "length",
+          "value": 21,
+          "unit": "in",
+          "quote": "length 21 in (collar seam to hem)"
+        },
+        {
+          "name": "sleeve",
+          "value": 23,
+          "unit": "in",
+          "quote": "sleeve 23 in"
+        }
+      ],
+      "flaws": [
+        {
+          "text": "Small faint mark near the left cuff",
+          "severity": "minor",
+          "quote": "Small faint mark near the left cuff, see last photo."
+        },
+        {
+          "text": "Light fading at the collar",
+          "severity": "minor",
+          "quote": "Light fading at the collar, normal for age."
+        }
+      ],
+      "fit_notes": [],
+      "photo_notes": [
+        "Jacket is laid flat on a table, showing the front and overall wash.",
+        "The photo does not show the back of the jacket.",
+        "The specific mark on the left cuff mentioned in the text is not clearly visible in this image."
+      ],
+      "photo_garment_type": "jacket"
+    },
+    "meta": {
+      "model_label": "Open-weights LLM listing reader",
+      "ms": 8377,
+      "used_photo": true,
+      "recorded_at": "2026-11-02T03:21:10.550Z"
+    }
+  },
+  "knit-cardigan": {
+    "facts": {
+      "title": "Hand-knit cable cardigan",
+      "garment_type": "cardigan",
+      "size_label": null,
+      "era": null,
+      "fabric": "wool",
+      "has_stretch": false,
+      "price": null,
+      "currency": null,
+      "final_sale": null,
+      "measurements": [
+        {
+          "name": "chest_around",
+          "value": 43,
+          "unit": "in",
+          "quote": "Chest 43 in all the way around."
+        }
+      ],
+      "flaws": [
+        {
+          "text": "loose yarn at the bottom of the left side seam",
+          "severity": "minor",
+          "quote": "Some loose yarn at the bottom of the left side seam"
+        },
+        {
+          "text": "small pills under the arms",
+          "severity": "minor",
+          "quote": "a few small pills under the arms"
+        }
+      ],
+      "fit_notes": [
+        {
+          "text": "Fits like a modern M, a little oversized on me",
+          "quote": "Fits like a modern M, a little oversized on me."
+        }
+      ],
+      "photo_notes": [
+        "Photographed flat on a wooden deck, which makes it easy to see the full length and the cable pattern.",
+        "The photo is taken from a high angle, so the drape of the sleeves and the exact fit of the shoulders are hard to judge."
+      ],
+      "photo_garment_type": "cardigan"
+    },
+    "meta": {
+      "model_label": "Open-weights LLM listing reader",
+      "ms": 8363,
+      "used_photo": true,
+      "recorded_at": "2026-11-02T03:21:19.062Z"
+    }
+  },
+  "gingham-dress": {
+    "facts": {
+      "title": "1950s gingham day dress",
+      "garment_type": "dress",
+      "size_label": "12",
+      "era": "1950s",
+      "fabric": "Cotton",
+      "has_stretch": false,
+      "price": null,
+      "currency": null,
+      "final_sale": true,
+      "measurements": [
+        {
+          "name": "pit_to_pit",
+          "value": 17,
+          "unit": "in",
+          "quote": "pit to pit 17 in"
+        },
+        {
+          "name": "waist_flat",
+          "value": 13.5,
+          "unit": "in",
+          "quote": "waist 13.5 in"
+        },
+        {
+          "name": "length",
+          "value": 44,
+          "unit": "in",
+          "quote": "length 44 in"
+        }
+      ],
+      "flaws": [
+        {
+          "text": "Tiny hole at the left side seam under the arm",
+          "severity": "minor",
+          "quote": "Tiny hole at the left side seam under the arm (pictured), easily mended."
+        }
+      ],
+      "fit_notes": [
+        {
+          "text": "fits more like a modern 6",
+          "quote": "Vintage sizing, fits more like a modern 6."
+        }
+      ],
+      "photo_notes": [
+        "The dress is shown on a mannequin, which helps visualize the crossover bodice and pleated skirt shape.",
+        "The photo is a front view, so the side zip mentioned in the text is not visible."
+      ],
+      "photo_garment_type": "dress"
+    },
+    "meta": {
+      "model_label": "Open-weights LLM listing reader",
+      "ms": 7918,
+      "used_photo": true,
+      "recorded_at": "2026-11-02T03:21:27.136Z"
+    }
+  },
+  "combat-boots": {
+    "facts": {
+      "title": "Black leather lace-up combat boots",
+      "garment_type": "boots",
+      "size_label": "US 8.5",
+      "era": null,
+      "fabric": "leather",
+      "has_stretch": false,
+      "price": null,
+      "currency": null,
+      "final_sale": true,
+      "measurements": [
+        {
+          "name": "insole",
+          "value": 9.75,
+          "unit": "in",
+          "quote": "Insole 9.75 in."
+        },
+        {
+          "name": "shoe_size_us",
+          "value": 8.5,
+          "unit": "size",
+          "quote": "women's US 8.5"
+        }
+      ],
+      "flaws": [
+        {
+          "text": "resoled once by a cobbler",
+          "severity": "moderate",
+          "quote": "resoled once by a cobbler"
+        },
+        {
+          "text": "deep creasing across the toes",
+          "severity": "moderate",
+          "quote": "deep creasing across the toes"
+        },
+        {
+          "text": "scuffs on both toes",
+          "severity": "moderate",
+          "quote": "scuffs on both toes"
+        }
+      ],
+      "fit_notes": [],
+      "photo_notes": [
+        "Photographed from the front, so the back of the boots and the full sole tread are not visible.",
+        "The photo clearly shows the heavy creasing and scuffs on the toe area mentioned in the text."
+      ],
+      "photo_garment_type": "boots"
+    },
+    "meta": {
+      "model_label": "Open-weights LLM listing reader",
+      "ms": 5160,
+      "used_photo": true,
+      "recorded_at": "2026-11-02T03:22:04.819Z"
+    }
+  }
+}

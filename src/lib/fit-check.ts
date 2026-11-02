@@ -218,6 +218,15 @@ export function runFitCheck(facts: ListingFacts, listingText: string, profile: F
     const n = normalizeMeasurement(m);
     if (n) grounded.push(n);
   }
+  // Shoe sizes sometimes only come back as a size label ("US 8.5"). Parse it here, still grounded in the text.
+  if (category === "shoes" && !grounded.some((g) => g.name === "shoe_size_us") && facts.size_label) {
+    const m = /\b(US|EU|UK)\s*(\d{1,2}(?:\.5)?)\b/i.exec(facts.size_label);
+    if (m && isGrounded(m[0], listingText)) {
+      const sys = m[1].toLowerCase() as "us" | "eu" | "uk";
+      const n = normalizeMeasurement({ name: `shoe_size_${sys}`, value: parseFloat(m[2]), unit: "size", quote: m[0] });
+      if (n) grounded.push(n);
+    }
+  }
   // Prefer a direct measurement over one derived from a circumference.
   const byName = new Map<MeasurementName, Normalized>();
   for (const n of grounded) {

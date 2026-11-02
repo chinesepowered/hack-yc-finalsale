@@ -65,7 +65,12 @@ function Outro() {
           <li>An LLM reads the listing into quoted facts; plain code checks them against your measurements</li>
           <li>Try-on shows the look, not the fit. Measurements decide fit.</li>
         </ul>
-        <p className="num mt-10 text-[18px] text-ink-3">Open source, AGPL-3.0. Sellers and listings are fictional. Photos: Wikimedia Commons, see credits.</p>
+        <p className="num mt-10 text-[17px] text-ink-3">Open source, AGPL-3.0. Sellers and listings are fictional.</p>
+        <p className="mx-auto mt-2 max-w-[1000px] text-[14px] leading-relaxed text-ink-3">
+          Photos via Wikimedia Commons: Brianna (CC BY 2.0), Mustafa ezz (CC0), NikosLikomitros (CC0), Lisa Dusseault (CC BY 2.0), Rhododendrites (CC BY-SA
+          4.0), Auckland War Memorial Museum Tamaki Paenga Hira (CC BY 4.0), JustinLiang522 (CC BY-SA 4.0). Try-on images made with the YouCam API. Full credits
+          in docs/CREDITS.md.
+        </p>
       </div>
     </main>
   );

@@ -12,18 +12,18 @@ const mayaProfile: FitProfile = {
   shoes: { shoe_size_us: 8, insole: 9.5 },
 };
 
-const theoProfile: FitProfile = {
+const noorProfile: FitProfile = {
   displayUnits: "in",
-  jacket: { pit_to_pit: 23, length: 27, sleeve: 25.5 },
-  top: { pit_to_pit: 22, length: 28, sleeve: 25 },
-  dress: {},
-  bottom: { waist_flat: 16, inseam: 32, rise: 11 },
-  shoes: { shoe_size_us: 10.5, insole: 10.75 },
+  jacket: { pit_to_pit: 22, length: 25, sleeve: 23.5 },
+  top: { pit_to_pit: 21.5, length: 27, sleeve: 23.5 },
+  dress: { pit_to_pit: 19, waist_flat: 15, length: 52 },
+  bottom: { waist_flat: 15.5, inseam: 30, rise: 11 },
+  shoes: { shoe_size_us: 7.5, insole: 9.25 },
 };
 
 export const SAMPLE_SHOPPERS: Shopper[] = [
   { id: "maya", name: "Maya", photo: "/demo/shoppers/maya.jpg", profile: mayaProfile, sample: true },
-  { id: "theo", name: "Theo", photo: "/demo/shoppers/theo.jpg", profile: theoProfile, sample: true },
+  { id: "noor", name: "Noor", photo: "/demo/shoppers/noor.jpg", profile: noorProfile, sample: true },
 ];
 
 export const SAMPLE_LISTINGS: Listing[] = [
@@ -44,54 +44,54 @@ Small faint mark near the left cuff, see last photo. Light fading at the collar,
 Final sale, no returns. Ships in 2 days.`,
   },
   {
-    id: "knit-sweater",
-    title: "Hand-knit wool sweater",
+    id: "knit-cardigan",
+    title: "Hand-knit cable cardigan",
     price: 36,
     currency: "USD",
     seller: "Moth and Thread",
     location: "Portland, OR",
-    photo: "/demo/listings/knit-sweater.jpg",
+    photo: "/demo/listings/knit-cardigan.jpg",
     sample: true,
-    text: `Hand-knit wool sweater, no size tag
-Cozy cable knit, crew neck. Fits like a modern M, a little oversized on me.
+    text: `Hand-knit cable cardigan, no size tag
+Cream wool, V-neck, six buttons, lovely cable and lace panels. Fits like a modern M, a little oversized on me.
 Chest 43 in all the way around. Happy to measure anything else.
-Wool blend (feels like mostly wool, no fiber tag).
-A few small pills under the arms and one pulled stitch at the back hem, easy to fix.
+Feels like pure wool (no fiber tag). Hand wash only.
+Some loose yarn at the bottom of the left side seam and a few small pills under the arms. Easy to fix.
 Smoke-free home.`,
   },
   {
-    id: "floral-dress",
-    title: "70s floral midi dress",
+    id: "gingham-dress",
+    title: "50s gingham day dress",
     price: 42,
     currency: "USD",
     seller: "Old Pine Closet",
     location: "Austin, TX",
-    photo: "/demo/listings/floral-dress.jpg",
+    photo: "/demo/listings/gingham-dress.jpg",
     sample: true,
-    text: `1970s floral midi dress, tagged size 12
-Vintage sizing, fits more like a modern 6. Back zip works smoothly.
+    text: `1950s gingham day dress, tagged size 12
+Brown and cream check, crossover bodice, cap sleeves, full pleated skirt. Side zip works smoothly.
+Vintage sizing, fits more like a modern 6.
 Flat measurements: pit to pit 17 in, waist 13.5 in, length 44 in.
-100% polyester, no stretch.
+Cotton, no stretch.
 Tiny hole at the left side seam under the arm (pictured), easily mended.
 All sales final.`,
   },
   {
-    id: "ankle-boots",
-    title: "Leather lace-up ankle boots",
+    id: "combat-boots",
+    title: "Black leather combat boots",
     price: 55,
     currency: "USD",
     seller: "Dovetail Resale",
     location: "Chicago, IL",
-    photo: "/demo/listings/ankle-boots.jpg",
+    photo: "/demo/listings/combat-boots.jpg",
     sample: true,
-    text: `Leather lace-up ankle boots, women's US 8.5
-Brown leather, stacked 1.5 in heel. Insole 9.75 in.
-Resoled once by a cobbler. Light creasing across the toes and a scuff on the right heel.
+    text: `Black leather lace-up combat boots, women's US 8.5
+Ten eyelets, chunky lug sole. Insole 9.75 in.
+Well worn: resoled once by a cobbler, deep creasing across the toes and scuffs on both toes.
 No returns, please ask questions before buying.`,
   },
 ];
 
 export const SAMPLE_CLOSET: ClosetItem[] = [
-  { id: "black-dress", label: "My black dress", photo: "/demo/closet/black-dress.jpg", garment_type: "dress", sample: true },
   { id: "white-sneakers", label: "My white sneakers", photo: "/demo/closet/white-sneakers.jpg", garment_type: "sneakers", sample: true },
 ];

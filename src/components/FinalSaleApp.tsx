@@ -266,7 +266,7 @@ function ListingsCard({ listings, selected, onSelect, onPaste }: { listings: Lis
                 <span className="mt-0.5 block truncate text-[12.5px] text-ink-3">{l.seller}</span>
                 <span className="mt-1 flex items-center gap-2">
                   <span className="num text-[14px] font-medium">{l.price ? `$${l.price}` : ""}</span>
-                  {l.facts?.final_sale !== false && <span className="stamp">Final sale</span>}
+                  {l.facts?.final_sale === true && <span className="stamp">Final sale</span>}
                 </span>
               </span>
             </button>

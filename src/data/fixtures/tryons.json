@@ -1,1 +1,237 @@
-{}
+{
+  "maya|denim-jacket|": {
+    "image": "/demo/results/maya__denim-jacket.jpg",
+    "trace": [
+      {
+        "endpoint": "cloth-v4",
+        "garment_category": "outer",
+        "garment_label": "90s washed denim jacket",
+        "task_id_hint": "tZVkA7...",
+        "polls": 4,
+        "ms": 13396,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/cloth-v4 {garment_category: \"outer\"}",
+          "GET /s2s/v2.0/task/cloth-v4/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      }
+    ],
+    "recorded_at": "2026-11-02T03:22:25.814Z"
+  },
+  "maya|knit-cardigan|": {
+    "image": "/demo/results/maya__knit-cardigan.jpg",
+    "trace": [
+      {
+        "endpoint": "cloth-v4",
+        "garment_category": "upper_body",
+        "garment_label": "Hand-knit cable cardigan",
+        "task_id_hint": "0G_t25...",
+        "polls": 4,
+        "ms": 13365,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/cloth-v4 {garment_category: \"upper_body\"}",
+          "GET /s2s/v2.0/task/cloth-v4/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      }
+    ],
+    "recorded_at": "2026-11-02T03:22:55.889Z"
+  },
+  "maya|gingham-dress|": {
+    "image": "/demo/results/maya__gingham-dress.jpg",
+    "trace": [
+      {
+        "endpoint": "cloth-v4",
+        "garment_category": "full_body",
+        "garment_label": "50s gingham day dress",
+        "task_id_hint": "4YK20v...",
+        "polls": 4,
+        "ms": 12682,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/cloth-v4 {garment_category: \"full_body\"}",
+          "GET /s2s/v2.0/task/cloth-v4/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      }
+    ],
+    "recorded_at": "2026-11-02T03:23:08.736Z"
+  },
+  "maya|combat-boots|": {
+    "image": "/demo/results/maya__combat-boots.jpg",
+    "trace": [
+      {
+        "endpoint": "shoes-transfer",
+        "garment_label": "Black leather combat boots",
+        "task_id_hint": "ycBkzX...",
+        "polls": 4,
+        "ms": 12986,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/shoes-transfer",
+          "GET /s2s/v2.0/task/shoes-transfer/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      }
+    ],
+    "recorded_at": "2026-11-02T03:23:35.533Z"
+  },
+  "maya|denim-jacket|white-sneakers": {
+    "image": "/demo/results/maya__denim-jacket__white-sneakers.jpg",
+    "trace": [
+      {
+        "endpoint": "cloth-v4",
+        "garment_category": "outer",
+        "garment_label": "90s washed denim jacket",
+        "task_id_hint": "J4zE-w...",
+        "polls": 4,
+        "ms": 12296,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/cloth-v4 {garment_category: \"outer\"}",
+          "GET /s2s/v2.0/task/cloth-v4/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      },
+      {
+        "endpoint": "shoes-transfer",
+        "garment_label": "My white sneakers",
+        "task_id_hint": "wiG_65...",
+        "polls": 4,
+        "ms": 12424,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/shoes-transfer",
+          "GET /s2s/v2.0/task/shoes-transfer/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      }
+    ],
+    "recorded_at": "2026-11-02T03:24:00.421Z"
+  },
+  "maya|gingham-dress|white-sneakers": {
+    "image": "/demo/results/maya__gingham-dress__white-sneakers.jpg",
+    "trace": [
+      {
+        "endpoint": "cloth-v4",
+        "garment_category": "full_body",
+        "garment_label": "50s gingham day dress",
+        "task_id_hint": "gDvDCT...",
+        "polls": 4,
+        "ms": 13519,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/cloth-v4 {garment_category: \"full_body\"}",
+          "GET /s2s/v2.0/task/cloth-v4/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      },
+      {
+        "endpoint": "shoes-transfer",
+        "garment_label": "My white sneakers",
+        "task_id_hint": "ma8y3R...",
+        "polls": 4,
+        "ms": 12340,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/shoes-transfer",
+          "GET /s2s/v2.0/task/shoes-transfer/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      }
+    ],
+    "recorded_at": "2026-11-02T03:24:38.016Z"
+  },
+  "noor|denim-jacket|": {
+    "image": "/demo/results/noor__denim-jacket.jpg",
+    "trace": [
+      {
+        "endpoint": "cloth-v4",
+        "garment_category": "outer",
+        "garment_label": "90s washed denim jacket",
+        "task_id_hint": "qt6xTV...",
+        "polls": 4,
+        "ms": 12490,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/cloth-v4 {garment_category: \"outer\"}",
+          "GET /s2s/v2.0/task/cloth-v4/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      }
+    ],
+    "recorded_at": "2026-11-02T03:24:50.670Z"
+  },
+  "noor|knit-cardigan|": {
+    "image": "/demo/results/noor__knit-cardigan.jpg",
+    "trace": [
+      {
+        "endpoint": "cloth-v4",
+        "garment_category": "upper_body",
+        "garment_label": "Hand-knit cable cardigan",
+        "task_id_hint": "HylCmn...",
+        "polls": 4,
+        "ms": 12065,
+        "units": 2,
+        "cached": false,
+        "calls": [
+          "POST /s2s/v2.0/file (person photo, free)",
+          "PUT signed URL (person bytes)",
+          "POST /s2s/v2.0/file (garment photo, free)",
+          "PUT signed URL (garment bytes)",
+          "POST /s2s/v2.0/task/cloth-v4 {garment_category: \"upper_body\"}",
+          "GET /s2s/v2.0/task/cloth-v4/{task_id} x4 until success",
+          "GET results.url (download image)"
+        ]
+      }
+    ],
+    "recorded_at": "2026-11-02T03:25:02.898Z"
+  }
+}

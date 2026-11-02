@@ -24,7 +24,7 @@ await tid("check-panel").waitFor();
 await settle(1200);
 await page.screenshot({ path: `${out}/01-try-on-and-final-sale-check.png` });
 
-await tid("closet-black-dress").click();
+await tid("closet-white-sneakers").click();
 await settle(1200);
 await tid("closet-card").scrollIntoViewIfNeeded();
 await page.evaluate(() => window.scrollTo(0, 0));
@@ -39,11 +39,11 @@ await page.screenshot({ path: `${out}/03-youcam-api-calls.png` });
 await tid("trace-dialog-close").click();
 
 await tid("closet-none").click();
-await tid("listing-knit-sweater").click();
+await tid("listing-knit-cardigan").click();
 await settle(1200);
 await page.screenshot({ path: `${out}/04-missing-measurement-ask-the-seller.png` });
 
-await tid("listing-ankle-boots").click();
+await tid("listing-combat-boots").click();
 await settle(1000);
 await tid("save-look").click();
 await tid("open-profile").click();

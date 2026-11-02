@@ -113,7 +113,8 @@ Rules:
   Names: pit_to_pit (armpit to armpit, measured flat), chest_around (full chest circumference), length (top of shoulder or collar to hem),
   sleeve, shoulder (seam to seam), waist_flat, waist_around, hip_flat, hip_around, inseam, rise, insole, shoe_size_us, shoe_size_eu,
   shoe_size_uk, heel_height, shaft_height. If the seller says "chest 42" with no "pit to pit" or "flat", it is chest_around.
-  A bare clothing size label like "M" is size_label, not a measurement.
+  A bare clothing size label like "M" is size_label, not a measurement. Shoe sizes go in both places: size_label and a
+  shoe_size_us, shoe_size_eu or shoe_size_uk measurement with unit "size".
 - quote: copy the exact words from the listing, character for character, that contain the fact (for measurements include the number).
 - flaws: every defect, wear, stain, hole, repair, odor, pilling, fading or missing part the seller mentions. severity: minor (small or
   cosmetic), moderate (visible when worn), major (damage that needs repair).

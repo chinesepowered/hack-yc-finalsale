@@ -87,7 +87,7 @@ const scenes = [
     text: "Style it with what you own. Pick your black dress, and Final Sale chains two YouCam try-ons in dressing order: the dress first, then the jacket on top.",
     run: async (a) => {
       await a.scrollTo("closet-card");
-      await a.click("closet-black-dress");
+      await a.click("closet-white-sneakers");
       await a.pause(1200);
       await a.scrollTop();
       await a.pause(4200);
@@ -98,7 +98,7 @@ const scenes = [
     id: "s07-ask",
     text: "When a seller leaves out a measurement, Final Sale says so, and drafts the question to ask before you buy.",
     run: async (a) => {
-      await a.click("listing-knit-sweater");
+      await a.click("listing-knit-cardigan");
       await a.pause(2600);
       await a.scrollTo("ask-seller");
       await a.hover("ask-seller");
@@ -111,7 +111,7 @@ const scenes = [
     text: "Boots go through YouCam AI Shoes. Half a size up, with a scuffed heel. Good to know before it's final.",
     run: async (a) => {
       await a.scrollTop();
-      await a.click("listing-ankle-boots");
+      await a.click("listing-combat-boots");
       await a.pause(3000);
       await a.hover("check-verdict");
       await a.pause(1500);
