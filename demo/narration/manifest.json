@@ -1,0 +1,57 @@
+{
+  "s01-problem": {
+    "hash": "bf7a6b0249790115",
+    "seconds": 13.635918,
+    "chars": 213
+  },
+  "s02-photo": {
+    "hash": "0b88c31b7a735edf",
+    "seconds": 8.202449,
+    "chars": 148
+  },
+  "s03-aha": {
+    "hash": "c3e2700b72fb8277",
+    "seconds": 9.874286,
+    "chars": 160
+  },
+  "s04-check": {
+    "hash": "dfbd29f54ce396c0",
+    "seconds": 17.240816,
+    "chars": 308
+  },
+  "s05-api": {
+    "hash": "76e1efe316ff1648",
+    "seconds": 7.810612,
+    "chars": 112
+  },
+  "s06-personal": {
+    "hash": "831d35aadb791a71",
+    "seconds": 6.60898,
+    "chars": 120
+  },
+  "s07-closet": {
+    "hash": "a1792298ad1e85d3",
+    "seconds": 10.527347,
+    "chars": 170
+  },
+  "s08-ask": {
+    "hash": "563e5541135152d8",
+    "seconds": 7.810612,
+    "chars": 135
+  },
+  "s09-shoes": {
+    "hash": "fe167fe0cfbc7e3b",
+    "seconds": 6.19102,
+    "chars": 96
+  },
+  "s10-compare": {
+    "hash": "3615c463225b5d62",
+    "seconds": 3.082449,
+    "chars": 43
+  },
+  "s11-honest": {
+    "hash": "ab4f9d08da3cbcdb",
+    "seconds": 13.165714,
+    "chars": 222
+  }
+}

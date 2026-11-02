@@ -6,7 +6,8 @@ usually final sale.
 
 ![Final Sale: a denim jacket listing tried on with YouCam AI Clothes, next to the final sale check](docs/screenshots/01-try-on-and-final-sale-check.png)
 
-- **Demo video:** [`demo/video.mp4`](demo/video.mp4) (narrated walkthrough, about 2 minutes)
+- **Demo video:** [`demo/video.mp4`](demo/video.mp4) (narrated walkthrough, 2:06; thumbnail `demo/thumb.jpg`; script in
+  [docs/demo-script.md](docs/demo-script.md))
 - **Try it without a key:** run it locally (below) and stay in **Replay of a recorded run**, which is the default.
 - Built for the YouCam API Skin AI & eCommerce VTO Hackathon, topic **eCommerce VTO**.
 
@@ -30,13 +31,25 @@ unworn clothes.
    "Length 21 in, your usual is 23 in", "Seller mentions: small faint mark near the left cuff", "Not listed: length",
    with a ruler graphic and a drafted question to ask the seller.
 4. **Style it with what you own.** Pick a piece from your closet and Final Sale chains two YouCam try-ons in dressing
-   order (the dress first, then the jacket). Save looks and compare two listings side by side.
+   order (for example the listing's jacket with AI Clothes, then your white sneakers with AI Shoes). Save looks and
+   compare two listings side by side.
 
-**The aha:** a crumpled thrift-listing photo becomes you wearing it, with a warning that the listing is two inches
-shorter than what you usually wear.
+**The aha:** a flat-lay thrift-listing photo becomes you wearing it, with a warning that the listing is two inches
+shorter than what you usually wear. Switch to the second sample shopper and the same jacket gets a different verdict
+(1.5 in narrow and 4 in short for her), because the check runs on each person's own measurements.
 
 **Honesty:** a try-on shows the look, not the fit. Measurements decide fit, which is why the check sits next to the
 image, in the app and in this README.
+
+## Screenshots
+
+| | |
+| --- | --- |
+| ![Try-on and final sale check](docs/screenshots/01-try-on-and-final-sale-check.png) | ![Outfit with a closet piece, two chained YouCam calls](docs/screenshots/02-style-with-your-closet.png) |
+| ![The YouCam API calls behind an image](docs/screenshots/03-youcam-api-calls.png) | ![A missing measurement and the drafted seller question](docs/screenshots/04-missing-measurement-ask-the-seller.png) |
+| ![Usual measurements, stored in the browser](docs/screenshots/05-your-usual-measurements.png) | ![Two saved looks side by side](docs/screenshots/06-compare-side-by-side.png) |
+
+Phone layout: [docs/screenshots/07-mobile.png](docs/screenshots/07-mobile.png).
 
 ## Who it's for
 
@@ -59,13 +72,16 @@ For an outfit, the first result is downloaded and uploaded again as the source o
 (dress or bottoms, then tops, outerwear, shoes). Every result in the UI names the API that made it, and **API calls**
 shows the exact sequence, timing and units.
 
+**Units used:** the whole recorded demo is ten YouCam tasks (six single try-ons and two chained outfits), each 12 to
+14 seconds with no failures, for **20 units** in total. The account balance went from 976 to 956.
+
 YouCam errors such as `error_pose` or `error_apply_region_mismatch` are translated into plain advice ("Use a
 straight-on photo from head to toe").
 
 ## Replay of a recorded run
 
 Judges don't need keys. The app opens in **Replay of a recorded run**: two sample shoppers, four fictional listings
-and two closet pieces, with every try-on image and listing reading recorded once through this app's own
+and a closet piece, with every try-on image and listing reading recorded once through this app's own
 `/api/tryon` and `/api/read-listing` routes (`scripts/record-tryon.mjs`, `scripts/record-listing.mjs`) and saved in
 `src/data/fixtures` and `public/demo/results`. The final sale check is computed live in the browser, so editing the
 measurements changes the verdict immediately. **Live** mode turns on when the server has keys.
@@ -97,6 +113,7 @@ pnpm build && pnpm start          # production build
 pnpm lint
 node scripts/check-secrets.mjs    # key scan over all history; prints nothing when clean
 node scripts/screenshots.mjs      # docs/screenshots at 1440x900 (needs Playwright)
+node scripts/a11y-check.mjs       # axe-core WCAG 2.2 AA scan of six views
 node --env-file=.env.local scripts/make-video.mjs   # demo/video.mp4 and demo/thumb.jpg
 ```
 
@@ -113,18 +130,27 @@ node --env-file=.env.local scripts/make-video.mjs   # demo/video.mp4 and demo/th
   lists missing key measurements, flags flaws, notes vintage size labels and return policy, and drafts the seller
   question.
 - `src/lib/routing.ts`: garment type to YouCam endpoint and category, and dressing order.
-- Keys stay on the server; photos stay in the browser until you press **Try it on**.
+- Keys stay on the server; photos stay in the browser until you press **Try it on** or **Read listing**.
 
 ## Accessibility
 
 Built to WCAG 2.2 AA: semantic landmarks and headings, a skip link, visible focus rings, native `<dialog>` modals
 (focus moves in and returns, Escape closes), labeled form fields with hints, text plus icon (never color alone) for
-every flag, AA color contrast, 44 px touch targets, `aria-live` status for long try-ons, alt text on every image,
-and `prefers-reduced-motion` support. Mobile-first: one column on phones, three columns on desktop.
+every flag, AA color contrast, touch targets of 32 px or more (44 px for the main buttons; the WCAG 2.2 AA minimum is
+24 px), `aria-live` status for long try-ons, alt text on every meaningful image (decorative ones are hidden from screen
+readers), and `prefers-reduced-motion` support. Mobile-first: one column on phones (photo, listing, try-on, check, closet),
+two on laptops, three on desktops.
+
+Checked with axe-core 4.14 against the WCAG 2.0, 2.1 and 2.2 A and AA rules on six views (desktop, phone, both
+dialogs, a listing with a missing measurement, compare): **0 violations** (`node scripts/a11y-check.mjs`). Automated
+checks don't catch everything, so we also ran a scripted keyboard-only pass: Tab reaches every listing, closet piece and
+button with a visible focus ring, Enter selects, and Escape closes a dialog and returns focus to the button that
+opened it.
 
 ## Limitations
 
-- **Look, not fit.** The try-on image is a visualization. Fit decisions come from the measurements.
+- **Look, not fit.** The try-on image is a visualization. Fit decisions come from the measurements. The model can
+  also adjust a pose slightly (hands on hips became hands near the pockets in our jacket try-on).
 - YouCam's lower-body try-on needs a photo of the garment being worn, so flat-lay trousers and skirts don't work
   well. Bags (`/task/bag`) generate a styled scene rather than using your photo, so the app doesn't feature them.
 - The listing reader only knows what the seller wrote. Missing measurements are called out, not guessed.

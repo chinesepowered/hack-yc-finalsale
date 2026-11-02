@@ -1,0 +1,68 @@
+[
+  {
+    "id": "s01-problem",
+    "start": 0.2,
+    "seconds": 13.64,
+    "text": "Secondhand clothes are usually final sale. One of a kind, no returns, no size chart, and photographed on a hanger or a tabletop. That's exactly where trying before you buy matters most, and where nobody offers it."
+  },
+  {
+    "id": "s02-photo",
+    "start": 14.84,
+    "seconds": 8.2,
+    "text": "Final Sale fixes that. You add a full-body photo once, and it stays in your browser. Then you note the measurements of clothes that already fit you."
+  },
+  {
+    "id": "s03-aha",
+    "start": 25.07,
+    "seconds": 9.87,
+    "text": "Here's a vintage denim jacket from a resale listing. One tap, and the YouCam AI Clothes API puts it on you, using the outerwear category of its cloth v4 engine."
+  },
+  {
+    "id": "s04-check",
+    "start": 35.95,
+    "seconds": 17.24,
+    "text": "Next to the image is the final sale check. A language model reads the listing into facts, each with the seller's exact words. Then plain code compares them with your measurements. This jacket is two inches shorter than yours, and the seller mentions a mark near the cuff. The photo could never show you that."
+  },
+  {
+    "id": "s05-api",
+    "start": 54.19,
+    "seconds": 7.81,
+    "text": "Every image shows which YouCam API made it, and how: upload both photos, start the task, poll until it succeeds."
+  },
+  {
+    "id": "s06-personal",
+    "start": 64.37,
+    "seconds": 6.61,
+    "text": "Switch shoppers, and the same jacket gets a different verdict, because the check runs on each person's own measurements."
+  },
+  {
+    "id": "s07-closet",
+    "start": 73.81,
+    "seconds": 10.53,
+    "text": "Style it with what you own. Pick your white sneakers, and Final Sale chains two YouCam APIs in dressing order: AI Clothes for the jacket, then AI Shoes for your sneakers."
+  },
+  {
+    "id": "s08-ask",
+    "start": 85.34,
+    "seconds": 7.81,
+    "text": "When a seller leaves out a measurement, like this cardigan's length, Final Sale says so, and drafts the question to ask before you buy."
+  },
+  {
+    "id": "s09-shoes",
+    "start": 94.15,
+    "seconds": 6.19,
+    "text": "Boots go through YouCam AI Shoes. Half a size up, and well worn. Good to know before it's final."
+  },
+  {
+    "id": "s10-compare",
+    "start": 102.82,
+    "seconds": 3.08,
+    "text": "Save looks, then compare them side by side."
+  },
+  {
+    "id": "s11-honest",
+    "start": 106.91,
+    "seconds": 13.17,
+    "text": "One honest limit: a try-on shows the look, not the fit. That's why the measurements sit right next to it. Final Sale is for secondhand shoppers, and for the small resellers who lose sales when buyers can't picture an item."
+  }
+]

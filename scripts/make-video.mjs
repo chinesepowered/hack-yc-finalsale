@@ -29,9 +29,9 @@ const TMP = path.join(OUT, ".tmp");
 const scenes = [
   {
     id: "s01-problem",
-    text: "Secondhand clothes are usually final sale. One of a kind, no returns, no size chart, and photographed on a hanger. That's exactly where trying before you buy matters most, and where nobody offers it.",
+    text: "Secondhand clothes are usually final sale. One of a kind, no returns, no size chart, and photographed on a hanger or a tabletop. That's exactly where trying before you buy matters most, and where nobody offers it.",
     run: async (a) => {
-      await a.goto(`${BASE}/video/intro`);
+      await a.pause(400);
     },
   },
   {
@@ -41,21 +41,21 @@ const scenes = [
       await a.goto(BASE);
       await a.page.getByTestId("check-panel").waitFor();
       await a.click("view-original");
-      await a.pause(1800);
+      await a.pause(600);
       await a.click("open-profile");
       await a.page.getByTestId("profile-dialog").waitFor();
-      await a.pause(4200);
+      await a.pause(2200);
       await a.click("profile-dialog-close");
     },
   },
   {
     id: "s03-aha",
-    text: "Here's a vintage denim jacket from a resale listing, crumpled on a hanger. One tap, and the YouCam AI Clothes API puts it on you, using the outerwear category of its cloth v4 engine.",
+    text: "Here's a vintage denim jacket from a resale listing. One tap, and the YouCam AI Clothes API puts it on you, using the outerwear category of its cloth v4 engine.",
     run: async (a) => {
       await a.hover("listing-denim-jacket");
-      await a.pause(2600);
+      await a.pause(1200);
       await a.click("listing-denim-jacket");
-      await a.pause(3500);
+      await a.pause(3800);
       await a.hover("api-badge");
     },
   },
@@ -64,9 +64,9 @@ const scenes = [
     text: "Next to the image is the final sale check. A language model reads the listing into facts, each with the seller's exact words. Then plain code compares them with your measurements. This jacket is two inches shorter than yours, and the seller mentions a mark near the cuff. The photo could never show you that.",
     run: async (a) => {
       await a.hover("check-verdict");
-      await a.pause(5200);
+      await a.pause(5000);
       await a.hover("finding-m-length");
-      await a.pause(6500);
+      await a.pause(6800);
       await a.scrollTo("finding-flaw-0");
       await a.hover("finding-flaw-0");
     },
@@ -78,28 +78,39 @@ const scenes = [
       await a.scrollTop();
       await a.click("show-trace");
       await a.page.getByTestId("trace-dialog").waitFor();
-      await a.pause(5600);
+      await a.pause(4000);
       await a.click("trace-dialog-close");
     },
   },
   {
-    id: "s06-closet",
-    text: "Style it with what you own. Pick your black dress, and Final Sale chains two YouCam try-ons in dressing order: the dress first, then the jacket on top.",
+    id: "s06-personal",
+    text: "Switch shoppers, and the same jacket gets a different verdict, because the check runs on each person's own measurements.",
+    run: async (a) => {
+      await a.click("shopper-noor");
+      await a.pause(3400);
+      await a.hover("check-verdict");
+      await a.pause(1500);
+      await a.click("shopper-maya");
+    },
+  },
+  {
+    id: "s07-closet",
+    text: "Style it with what you own. Pick your white sneakers, and Final Sale chains two YouCam APIs in dressing order: AI Clothes for the jacket, then AI Shoes for your sneakers.",
     run: async (a) => {
       await a.scrollTo("closet-card");
       await a.click("closet-white-sneakers");
       await a.pause(1200);
       await a.scrollTop();
-      await a.pause(4200);
+      await a.pause(3800);
       await a.click("save-look");
     },
   },
   {
-    id: "s07-ask",
-    text: "When a seller leaves out a measurement, Final Sale says so, and drafts the question to ask before you buy.",
+    id: "s08-ask",
+    text: "When a seller leaves out a measurement, like this cardigan's length, Final Sale says so, and drafts the question to ask before you buy.",
     run: async (a) => {
       await a.click("listing-knit-cardigan");
-      await a.pause(2600);
+      await a.pause(2800);
       await a.scrollTo("ask-seller");
       await a.hover("ask-seller");
       await a.pause(1500);
@@ -107,19 +118,19 @@ const scenes = [
     },
   },
   {
-    id: "s08-shoes",
-    text: "Boots go through YouCam AI Shoes. Half a size up, with a scuffed heel. Good to know before it's final.",
+    id: "s09-shoes",
+    text: "Boots go through YouCam AI Shoes. Half a size up, and well worn. Good to know before it's final.",
     run: async (a) => {
       await a.scrollTop();
       await a.click("listing-combat-boots");
-      await a.pause(3000);
+      await a.pause(2400);
       await a.hover("check-verdict");
-      await a.pause(1500);
+      await a.pause(600);
       await a.click("save-look");
     },
   },
   {
-    id: "s09-compare",
+    id: "s10-compare",
     text: "Save looks, then compare them side by side.",
     run: async (a) => {
       await a.click("header-compare");
@@ -127,7 +138,7 @@ const scenes = [
     },
   },
   {
-    id: "s10-honest",
+    id: "s11-honest",
     text: "One honest limit: a try-on shows the look, not the fit. That's why the measurements sit right next to it. Final Sale is for secondhand shoppers, and for the small resellers who lose sales when buyers can't picture an item.",
     run: async (a) => {
       await a.pause(2500);
@@ -260,8 +271,12 @@ const a = {
   },
 };
 
+// The title card is already on screen when the timeline starts, so the video doesn't open on a blank page.
+await a.goto(`${BASE}/video/intro`);
+await page.waitForTimeout(600);
+
 const LEAD = 0.5; // seconds of picture before each narration clip starts
-const TAIL = 0.7; // breathing room after each clip
+const TAIL = 0.5; // breathing room after each clip
 for (const s of scenes) {
   const start = (Date.now() - t0) / 1000;
   s.start = start;
@@ -289,7 +304,7 @@ scenes.forEach((s, i) => {
   labels.push(`[a${i}]`);
 });
 const total = (Date.now() - t0) / 1000 - cut;
-filters.push(`${labels.join("")}amix=inputs=${labels.length}:normalize=0:dropout_transition=0,apad[mix]`);
+filters.push(`${labels.join("")}amix=inputs=${labels.length}:normalize=0:dropout_transition=0,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad[mix]`);
 filters.push(`[0:v]fps=30,format=yuv420p,fade=t=in:st=0:d=0.6,fade=t=out:st=${(total - 1.6).toFixed(2)}:d=1.2[v]`);
 const out = path.join(OUT, "video.mp4");
 if (!values["dry-run"]) {

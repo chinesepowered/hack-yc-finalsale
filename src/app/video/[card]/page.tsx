@@ -90,9 +90,12 @@ function Thumb() {
           </div>
         </div>
         <div className="relative h-[620px]">
-          <img src="/demo/listings/denim-jacket.jpg" alt="" className="absolute left-0 top-10 w-[230px] rotate-[-6deg] rounded-md border-[10px] border-white bg-white shadow-2xl" />
-          <img src="/demo/results/maya__denim-jacket.jpg" alt="" className="absolute right-0 top-0 h-[620px] w-[465px] rounded-3xl border border-line object-cover shadow-2xl" />
-          <span className="absolute left-[150px] top-[300px] grid h-16 w-16 place-items-center rounded-full bg-denim text-[34px] text-white shadow-xl">
+          <img src="/demo/results/maya__denim-jacket.jpg" alt="" className="absolute right-0 top-0 z-0 h-[620px] w-[465px] rounded-3xl border border-line object-cover shadow-2xl" />
+          <div className="absolute left-0 top-[70px] z-10 w-[250px] rotate-[-6deg] rounded-md bg-white p-2.5 pb-2 shadow-2xl">
+            <img src="/demo/listings/denim-jacket.jpg" alt="" className="aspect-square w-full rounded-sm object-cover" />
+            <p className="num mt-1.5 text-center text-[15px] text-ink-2">the listing, $48</p>
+          </div>
+          <span className="absolute left-[205px] top-[330px] z-20 grid h-16 w-16 place-items-center rounded-full bg-denim text-[34px] text-white shadow-xl">
             &rarr;
           </span>
         </div>
