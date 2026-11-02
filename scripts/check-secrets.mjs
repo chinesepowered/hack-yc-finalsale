@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Pre-push check. Prints nothing and exits 0 when clean.
-// 1. The key-pattern scan from idea.md over all history (ignoring the line in idea.md that documents the scan itself).
+// 1. The key-pattern scan over all history (ignoring the line in the original brief, idea.md, that documents the scan itself).
 // 2. Every literal value in .env.local, searched across all history (only file names are printed, never values).
 // 3. Em dashes in tracked files (house style: none anywhere).
 import { execFileSync } from "node:child_process";
